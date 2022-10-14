@@ -1,11 +1,8 @@
-//write a function getComputerChoice
-//when entered randomly returns Rock, Paper, or Scissors
-const word
-word[1] = 'Rock';
-word[2] = 'Paper';
-word[3] = 'Scissors';
-function getComputerChoice() {
-    return Math.floor(Math.random() * (a,b,c)); //Reading as numbers, need to read as words. Create an array?
+function getComputerChoice() { 
+//Created an array so variable = Rock,Paper,Scissors
+  const randomPick = ['Rock', 'Paper', 'Scissors'];
+//Returns random element within the array. Math.floor/Math.random, randomizes the item picked in the array. .length assigns a number to the array ( in this case cycles through 3 options)
+  return randomPick [Math.floor(Math.random() * randomPick.length)];
 }
-
-console.log(getComputerChoice("Rock", "Paper", "Scissors"));
+//Calling the function created
+console.log(getComputerChoice());
