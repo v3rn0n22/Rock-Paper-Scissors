@@ -1,0 +1,14 @@
+.rock {
+    background-image:url("/img/meteor.jpg");
+    
+}
+
+button {
+    cursor: pointer;
+    width: 200px;
+    height: 200px
+}
+
+.selections {
+    display: flex;
+}

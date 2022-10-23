@@ -1,5 +1,5 @@
-const playerSelection = prompt('Pick your Weapon'); //Declares the player choice
-const computerSelection = getComputerChoice(); //calls getComputerChoice function to declare the computers choice
+let playerSelection //Declares the player choice
+let computerSelection = getComputerChoice(); //calls getComputerChoice function to declare the computers choice
 
 
 function getComputerChoice() { 
@@ -31,13 +31,12 @@ function playRound(playerSelection, computerSelection) {
 
 }
 
-console.log(playerSelection);
-console.log(playRound(playerSelection, computerSelection));
+
 
 
 /*function game(playRound) {
     for(let i = 0; i< 5; i++){
-        if (playerSelection )
+        if (i = rock )
         console.log(i);
     }
 }
