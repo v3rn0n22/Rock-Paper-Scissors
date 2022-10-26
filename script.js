@@ -1,3 +1,41 @@
+//This is called caching the Dom aka storing variables for future use
+const playerScore = 0;
+const computeScore = 0;
+const playerScore_span = document.getElementById('player-score');//Dom Variable, element span
+const computerScore_span = document.getElementById('computer-score');//Dom variables, element span
+const scoreBoard_div = document.querySelector('.score-board');
+const result_div = document.querySelector('.result');
+const rock_div = document.getElementById('r');//getElementById due to the location of 'r' in html
+const paper_div = document.getElementById('p');
+const scissors_div = document.getElementById('s');
+
+
+function game(playersChoice) {
+    console.log('kekekeke');
+}
+
+function main() {
+rock_div.addEventListener('click', function() {
+    game('r');
+})
+paper_div.addEventListener('click', function() {
+    game('p');
+})
+scissors_div.addEventListener('click', function() {
+    game('s');
+})
+}
+
+main();
+
+
+
+
+
+
+
+
+
 let playerSelection //Declares the player choice
 let computerSelection = getComputerChoice(); //calls getComputerChoice function to declare the computers choice
 
@@ -30,9 +68,6 @@ function playRound(playerSelection, computerSelection) {
     }
 
 }
-
-
-
 
 /*function game(playRound) {
     for(let i = 0; i< 5; i++){
