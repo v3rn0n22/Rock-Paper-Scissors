@@ -5,19 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Rock Paper Scissors Game</title>
 </head>
-    <h1>Rock, Paper, Scissors!</h1>
 <body>
-    <p> Pick your weapon!</p>
-  <div class="selections">
-   <div class="button1"></div>
-    <button class="rock">rock</button>
-    <div class="button2"></div>
-   <button class="paper">paper</button>     
-    <div class="button3"></div>
-   <button class="scissors">scissors</button>
-  </div>    
+    <header>
+        <h1>Rock, Paper, Scissors!</h1>
+   </header>
+   <div class = "score-board">
+    <div id = "player-label" class = "badge">Player</div>
+    <div id = "computer-label" class = "badge">Computer</div>
+    <span id = "player-score">0</span>:<span id = "computer-score">0</span>
+   </div>
+
+   <div class="result">
+    <p>Paper covers rock. You Win!</p>
+   </div>
+
+   <div class = "choices">
+    <div class = "choice" id="r">
+        <img src="/img/rock.png" alt="Rock">
+    </div>
+    <div class = "choice" id="p">
+        <img src="/img/paper.png" alt="Paper">
+    </div>
+    <div class = "choice" id="s">
+        <img src="/img/scissors.png" alt="scissors">
+    </div>
+   </div>
+
+   <p id="action">Make your move!</p>
+
+
+    
     
 
 
