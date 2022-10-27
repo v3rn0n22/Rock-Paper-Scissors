@@ -9,10 +9,40 @@ const rock_div = document.getElementById('r');//getElementById due to the locati
 const paper_div = document.getElementById('p');
 const scissors_div = document.getElementById('s');
 
-
-function game(playersChoice) {
-    console.log('kekekeke');
+function getComputerChoice() {
+    const choices = ['r', 'p', 's'];
+    randomNumber= Math.floor(Math.random() * 3);
+    return choices[randomNumber];
 }
+
+function win() {
+    console.log('You win!')
+}
+
+function game(playerChoice) {
+   const computerChoice = getComputerChoice();
+   //Using switch statements shortens the if else process
+    switch(playerChoice + computerChoice) {
+        case 'rs':
+        case 'pr':
+        case 'sp':
+            wins();
+            break;        
+        case 'rp':
+        case 'ps':
+        case 'sr':
+            lose();
+            break;  
+        case 'rr':
+        case 'PP':
+        case 'SS':
+            draw();
+            break;                  
+    }
+   
+  
+}
+game('i');
 
 function main() {
 rock_div.addEventListener('click', function() {
@@ -36,15 +66,15 @@ main();
 
 
 
-let playerSelection //Declares the player choice
+/*let playerSelection //Declares the player choice
 let computerSelection = getComputerChoice(); //calls getComputerChoice function to declare the computers choice
 
 
 function getComputerChoice() { 
 //Created an array so variable = Rock,Paper,Scissors
   let randomPick = ['Rock', 'Paper', 'Scissors'];
-//Returns random element within the array. Math.floor/Math.random, randomizes the item picked in the array. .length assigns a number to the array ( in this case cycles through 3 options)
-  return randomPick [Math.floor(Math.random() * 3)];
+Returns random element within the array. Math.floor/Math.random, randomizes the item picked in the array. .length assigns a number to the array ( in this case cycles through 3 options)
+ // return randomPick [Math.floor(Math.random() * 3)];
 }
 
 
