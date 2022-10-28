@@ -1,58 +1,71 @@
 //This is called caching the Dom aka storing variables for future use
-const playerScore = 0;
-const computeScore = 0;
+let playerScore = 0;
+let computerScore = 0;
+let gameScoreEnd = 5;
 const playerScore_span = document.getElementById('player-score');//Dom Variable, element span
 const computerScore_span = document.getElementById('computer-score');//Dom variables, element span
 const scoreBoard_div = document.querySelector('.score-board');
-const result_div = document.querySelector('.result');
+const result_p = document.querySelector('.result > p');
 const rock_div = document.getElementById('r');//getElementById due to the location of 'r' in html
 const paper_div = document.getElementById('p');
 const scissors_div = document.getElementById('s');
 
 function getComputerChoice() {
-    const choices = ['r', 'p', 's'];
+    const choices = ['Rock', 'Paper', 'Scissors'];
     randomNumber= Math.floor(Math.random() * 3);
     return choices[randomNumber];
 }
 
-function win() {
-    console.log('You win!')
+function win(player, computer) {
+    playerScore ++
+    playerScore_span.innerHTML = playerScore;
+    computerScore_span.innerHTML = computerScore;
+    result_p.innerHTML = player + ' beats ' + computer + ', round Won!';
 }
+function lose(player, computer) {
+    computerScore++;
+    computerScore_span.innerHTML = computerScore;
+    playerScore_span.innerHTML = playerScore;
+    result_p.innerHTML = computer + ' beats ' + player + ', round Loss!';
+}
+function draw(player, computer) {
+    console.log('Draw!');
+    result_p.innerHTML = 'Draw!';
+}
+
 
 function game(playerChoice) {
    const computerChoice = getComputerChoice();
    //Using switch statements shortens the if else process
     switch(playerChoice + computerChoice) {
-        case 'rs':
-        case 'pr':
-        case 'sp':
-            wins();
+        case 'RockScissors':
+        case 'PaperRock':
+        case 'ScissorsPaper':
+            win(playerChoice, computerChoice);
             break;        
-        case 'rp':
-        case 'ps':
-        case 'sr':
-            lose();
+        case 'RockPaper':
+        case 'PaperScissors':
+        case 'ScissorsRock':
+            lose(playerChoice, computerChoice);
             break;  
-        case 'rr':
-        case 'PP':
-        case 'SS':
-            draw();
+        case 'RockRock':
+        case 'PaperPaper':
+        case 'ScissorsScissors':
+            draw(playerChoice, computerChoice);
             break;                  
     }
-   
-  
 }
-game('i');
+
 
 function main() {
 rock_div.addEventListener('click', function() {
-    game('r');
+    game( 'Rock' );
 })
 paper_div.addEventListener('click', function() {
-    game('p');
+    game( 'Paper' );
 })
 scissors_div.addEventListener('click', function() {
-    game('s');
+    game( 'Scissors' );
 })
 }
 
